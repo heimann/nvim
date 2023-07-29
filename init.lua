@@ -11,6 +11,7 @@ require('settings')
 require('keymaps')
 
 require("lsp")
+require("treesitter")
 
 -- Load the configuration reloader
 require('user.reload')
