@@ -36,29 +36,6 @@ local plugins = {
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
 	},
-	--{
-	-- "neovim/nvim-lspconfig",
-	--lazy = false,
-	--priority = 1000,
-	--opts = {},
-	--},
-
-	--{
-	--"williamboman/mason.nvim",
-	--lazy = false,
-	--priority = 1000,
-	--opts = {},
-	--},
-	--
-	--{
-	--"williamboman/mason-lspconfig.nvim",
-	--lazy = false,
-	--priority = 1000,
-	--opts = {},
-	--},
-
-	-- Add more plugins as needed
-	-- Navigation
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.2',
