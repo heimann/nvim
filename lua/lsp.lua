@@ -17,6 +17,14 @@ lspconfig.lua_ls.setup {
 				-- (most likely LuaJIT in the case of Neovim)
 				version = 'LuaJIT',
 			},
+			format = {
+				-- This value determines the size of the tab.
+				-- It also affects the amount of space used for indentation of the first level.
+				indentWidth = 2, -- Use 2 spaces for one level of indentation.
+
+				-- This value determines whether to use spaces or tabs for indentation.
+				useTabs = false, -- Use spaces instead of tabs.
+			},
 			diagnostics = {
 				-- Get the language server to recognize the `vim` global
 				globals = {
