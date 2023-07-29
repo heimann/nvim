@@ -1,8 +1,23 @@
--- Reload Configuration
-vim.api.nvim_set_keymap("n", "<leader><CR>", "<cmd>lua ReloadConfig()<CR>", { noremap = true, silent = false })
+-- Load which-key
+local wk = require("which-key")
 
--- Navigation
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+-- Set up your mappings
+wk.register({
+  -- Reload Configuration
+  ["<CR>"] = { "<cmd>lua ReloadConfig()<CR>", "Reload Configuration" },
+  
+  -- Telescope mappings
+  f = {
+    name = "+find",
+    f = { "<cmd>Telescope find_files<CR>", "Find Files" },
+    w = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
+    b = { "<cmd>Telescope buffers<CR>", "Buffers" },
+  },
+  
+  -- Git
+  g = {
+    name = "+git",
+    s = { "<cmd>Git<CR>", "Git Status" },
+    -- add more Git related commands here
+  },
+}, { prefix = "<leader>" })
