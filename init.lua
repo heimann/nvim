@@ -1,20 +1,17 @@
--- Set the leader key
+-- 1. Preamble
 vim.g.mapleader = ' '
 
--- Load the plugins
-require('plugins')
+-- 2. Core Configurations
+require('settings')  -- Load the settings
+require('keymaps')  -- Load the keymaps
 
--- Load the settings
-require('settings')
+-- 3. Plugins and Extensions
+require('plugins')  -- Load the plugins
+require("lsp")  -- Load LSP configurations
+require("treesitter")  -- Load Treesitter configurations
 
--- Load the keymaps
-require('keymaps')
+-- 4. Appearance
+vim.cmd[[colorscheme tokyonight]]  -- Load theme
 
-require("lsp")
-require("treesitter")
-
--- Load the configuration reloader
-require('user.reload')
-
--- Load theme
-vim.cmd[[colorscheme tokyonight]]
+-- Miscellaneous
+require('user.reload')  -- Load the configuration reloader
