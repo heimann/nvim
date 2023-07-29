@@ -10,6 +10,8 @@ require('settings')
 -- Load the keymaps
 require('keymaps')
 
+require("lsp")
+
 -- Load the configuration reloader
 require('user.reload')
 
