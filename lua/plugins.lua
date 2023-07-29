@@ -1,3 +1,4 @@
+-- Setup Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -5,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -13,23 +14,18 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Define your plugins
 local plugins = {
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-  -- Code Hygiene
+  -- Core Plugins
   {
     "tpope/vim-fugitive",
     lazy = false,
   },
   {
-    "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
     lazy = false,
   },
+  -- Language Support
   {
-    "williamboman/mason.nvim",
+    "neovim/nvim-lspconfig",
     lazy = false,
   },
   {
@@ -40,32 +36,30 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     priority = 1000,
-    opts = {},
+  },
+  -- Code Navigation
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
   },
   {
     "folke/flash.nvim",
     event = "BufRead",
-    opts = {},
     -- stylua: ignore
     keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
-      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
-      { "r", mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
-      { "R", mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      {
-        "<c-s>",
-        mode = { "c" },
-        function() require("flash").toggle() end,
-        desc =
-        "Toggle Flash Search"
-      },
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
+  -- UI/UX Enhancements
   {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.2',
-    -- or                              , branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
   },
   {
     "folke/which-key.nvim",
@@ -74,13 +68,9 @@ local plugins = {
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  }
+  },
 }
 
 -- Setup Lazy
 require("lazy").setup(plugins)
+
