@@ -3,9 +3,6 @@ local wk = require("which-key")
 
 -- Set up your mappings
 wk.register({
-	-- Reload Configuration
-	["<CR>"] = { "<cmd>lua ReloadConfig()<CR>", "Reload Configuration" },
-
   -- Toggle Neotree
   ["n"] = { "<cmd>Neotree toggle<CR>", "Toggle Neotree"},
 
