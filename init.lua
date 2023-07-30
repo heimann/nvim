@@ -13,6 +13,3 @@ require("treesitter")  -- Load Treesitter configurations
 -- 4. Appearance
 vim.cmd[[colorscheme tokyonight]]  -- Load theme
 require("lineconf")
-
--- Miscellaneous
-require('user.reload')  -- Load the configuration reloader
