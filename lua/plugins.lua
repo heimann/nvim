@@ -17,7 +17,11 @@ local plugins = {
   -- Core Plugins
   {
     "tpope/vim-fugitive",
-    lazy = false,
+    event = "BufRead",
+  },
+  {
+    "tpope/vim-rhubarb",
+    event = "BufRead",
   },
   {
     "williamboman/mason.nvim",
