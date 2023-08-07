@@ -35,6 +35,6 @@ vim.opt.timeoutlen = 500            -- Key mapping timeout
 vim.opt.formatoptions:remove("cro") -- Comment formatting
 vim.opt.backup = false              -- No backup files
 vim.cmd[[ set spell! ]]             -- Toggle spellcheck
-vim.opt.spelllang = {"en", "de"}    -- Spellcheck languages
+vim.opt.spelllang = {"en"}    -- Spellcheck languages
 vim.opt.clipboard = "unnamedplus"
 
