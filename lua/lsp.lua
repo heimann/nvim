@@ -4,7 +4,7 @@ require("mason").setup()
 
 
 require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls", "rust_analyzer"},
+  ensure_installed = { "lua_ls", "rust_analyzer", "tsserver"},
 }
 
 local lspconfig = require("lspconfig");
@@ -12,6 +12,8 @@ local lspconfig = require("lspconfig");
 lspconfig.elixirls.setup {
   cmd = { "/home/david/code/elixir-ls/language_server.sh" }
 }
+
+lspconfig.tsserver.setup{}
 
 lspconfig.lua_ls.setup {
   settings = {
