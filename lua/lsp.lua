@@ -4,10 +4,14 @@ require("mason").setup()
 
 
 require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls", "rust_analyzer" },
+  ensure_installed = { "lua_ls", "rust_analyzer"},
 }
 
 local lspconfig = require("lspconfig");
+
+lspconfig.elixirls.setup {
+  cmd = { "/home/david/code/elixir-ls/language_server.sh" }
+}
 
 lspconfig.lua_ls.setup {
   settings = {
@@ -43,7 +47,6 @@ lspconfig.lua_ls.setup {
     },
   },
 }
-
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
