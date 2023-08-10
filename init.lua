@@ -5,6 +5,7 @@ vim.g.mapleader = ' '
 require('plugins')  -- Load the plugins
 require('settings')  -- Load the settings
 require('keymaps')  -- Load the keymaps
+require('filetypes') -- Load file-type specific configurations
 
 -- 3. Plugin Settings and Extensions
 require("lsp")  -- Load LSP configurations
