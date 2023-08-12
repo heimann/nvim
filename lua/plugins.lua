@@ -28,6 +28,10 @@ local plugins = {
     "williamboman/mason.nvim",
     lazy = false,
   },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
   -- Language Support
   {
     "neovim/nvim-lspconfig",
