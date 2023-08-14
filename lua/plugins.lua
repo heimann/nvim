@@ -81,7 +81,7 @@ local plugins = {
       end,
     },
   },
-{
+  {
     "RRethy/vim-illuminate",
     event = { "BufReadPost", "BufNewFile" },
     opts = {
@@ -122,7 +122,7 @@ local plugins = {
     "L3MON4D3/LuaSnip",
     build = (not jit.os:find("Windows"))
         and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
-      or nil,
+        or nil,
     dependencies = {
       "rafamadriz/friendly-snippets",
       config = function()
@@ -140,14 +140,29 @@ local plugins = {
         function()
           return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
         end,
-        expr = true, silent = true, mode = "i",
+        expr = true,
+        silent = true,
+        mode = "i",
       },
-      { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
+      { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
   },
-
-   -- auto completion
+  -- ai stuff
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    commit = "24bcca7",
+    config = function()
+      require("chatgpt").setup()
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    },
+  },
+  -- auto completion
   {
     "hrsh7th/nvim-cmp",
     version = false, -- last release is way too old
@@ -201,7 +216,7 @@ local plugins = {
   },
 
   -- text editing
-   {
+  {
     "echasnovski/mini.pairs",
     event = "VeryLazy",
     opts = {},
@@ -220,9 +235,16 @@ local plugins = {
     -- stylua: ignore
     keys = {
       { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
-      { "S", mode = { "n", "x", "o" }, function() require("flash").jump({
-        search = { forward = false, wrap = false, multi_window = false },
-      }) end,       desc = "Flash" },
+      {
+        "S",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump({
+            search = { forward = false, wrap = false, multi_window = false },
+          })
+        end,
+        desc = "Flash"
+      },
       { "T", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
       { "r", mode = "o",               function() require("flash").remote() end,     desc = "Remote Flash" },
       {

@@ -1,5 +1,6 @@
 -- Load which-key
 local wk = require("which-key")
+local chatgpt = require("chatgpt")
 
 -- Set up your normal mode mappings
 wk.register({
@@ -21,6 +22,21 @@ wk.register({
     h = { "<cmd>GBrowse!<CR>", "Copy Github link" },
   },
 }, { prefix = "<leader>" })
+
+wk.register({
+    c = {
+        name = "ChatGPT",
+        e = {
+            function()
+                chatgpt.edit_with_instructions()
+            end,
+            "Edit with instructions",
+        },
+    },
+}, {
+    prefix = "<leader>",
+    mode = "v",
+})
 
 
 vim.api.nvim_set_keymap("v", "<leader>gh", ":GBrowse!<cr>", { noremap = true })
