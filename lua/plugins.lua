@@ -47,6 +47,14 @@ local plugins = {
     priority = 1000,
   },
   {
+    "tpope/vim-commentary",
+    event = "VeryLazy",
+  },
+  {
+    "kshenoy/vim-signature",
+    event = "BufRead",
+  },
+  {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
@@ -116,6 +124,12 @@ local plugins = {
       { "]]", desc = "Next Reference" },
       { "[[", desc = "Prev Reference" },
     },
+  },
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      colorcolumn = "100",
+    }
   },
   -- snippets
   {
