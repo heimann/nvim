@@ -176,6 +176,24 @@ local plugins = {
       "nvim-telescope/telescope.nvim"
     },
   },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "BufRead",
+    config = function()
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  },
   -- auto completion
   {
     "hrsh7th/nvim-cmp",
@@ -215,6 +233,7 @@ local plugins = {
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
+          { name = "copilot" },
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
