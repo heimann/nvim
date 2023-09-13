@@ -10,6 +10,7 @@ vim.opt.cmdheight = 2               -- Height for command messages
 vim.opt.termguicolors = true        -- Enable true colors
 
 -- Search Settings
+vim.opt.ignorecase = true           -- Case-insensitive searching
 vim.opt.incsearch = true            -- Incremental search
 vim.opt.smartcase = true            -- Case-insensitive search until uppercase character is supplied
 
