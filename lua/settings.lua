@@ -6,7 +6,7 @@ vim.opt.wrap = false                -- No line wrapping
 vim.opt.encoding = "utf-8"          -- Display encoding
 vim.opt.fileencoding = "utf-8"      -- File encoding
 vim.opt.ruler = true                -- Cursor position display
-vim.opt.cmdheight = 2               -- Height for command messages
+vim.opt.cmdheight = 1               -- Height for command messages
 vim.opt.termguicolors = true        -- Enable true colors
 
 -- Search Settings
@@ -29,7 +29,7 @@ vim.opt.splitright = true           -- Vertical split direction
 
 -- Misc Settings
 vim.opt.iskeyword:append("-")       -- Word delimiters
-vim.opt.showtabline = 2             -- Always show tab bar
+vim.opt.showtabline = 0             -- Always show tab bar
 vim.opt.showmode = false            -- No mode display
 vim.opt.updatetime = 300            -- Cursor hold update time
 vim.opt.timeoutlen = 500            -- Key mapping timeout
