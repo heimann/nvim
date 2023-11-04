@@ -1,0 +1,53 @@
+{
+  "lvhe": {
+    "prefix": "lvhe",
+    "body": [
+      "def handle_event(${1:\"event\"}, ${2:params}, socket) do",
+      "  $3",
+      "  {:noreply, assign(socket, $4)}",
+      "end"
+    ],
+    "description": "Define a Phoenix LiveView handle_event function with {:noreply, socket}"
+  },
+  "lvhi": {
+    "prefix": "lvhi",
+    "body": [
+      "def handle_info(${1:info}, socket) do",
+      "  $2",
+      "  {:noreply, assign(socket, $3)}",
+      "end"
+    ],
+    "description": "Define a Phoenix LiveView handle_info function with {:noreply, socket}"
+  },
+  "lvhp": {
+    "prefix": "lvhp",
+    "body": [
+      "def handle_params(${1:params}, ${2:url}, socket) do",
+      "  $3",
+      "  {:noreply, assign(socket, $4)}",
+      "end"
+    ],
+    "description": "Define a Phoenix LiveView handle_params function with {:noreply, socket}"
+  },
+  "lvmount": {
+    "prefix": "lvm",
+    "body": [
+      "def mount(${1:params}, ${2:session}, socket) do",
+      "  $3",
+      "  {:ok, assign(socket, $4)}",
+      "end"
+    ],
+    "description": "Define a Phoenix LiveView mount function with {:noreply, socket}"
+  },
+  "lvrender": {
+    "prefix": "lvr",
+    "body": [
+      "def render(assigns) do",
+      "  ~H\"\"\"",
+      "  $0",
+      "  \"\"\"",
+      "end"
+    ],
+    "description": "Define a Phoenix LiveView render function"
+  }
+}
