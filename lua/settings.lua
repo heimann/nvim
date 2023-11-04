@@ -9,6 +9,9 @@ vim.opt.ruler = true                -- Cursor position display
 vim.opt.cmdheight = 1               -- Height for command messages
 vim.opt.termguicolors = true        -- Enable true colors
 
+-- Get rid of annoying stuff
+vim.opt.swapfile = false            -- Might totally regret this one
+
 -- Search Settings
 vim.opt.ignorecase = true           -- Case-insensitive searching
 vim.opt.incsearch = true            -- Incremental search
