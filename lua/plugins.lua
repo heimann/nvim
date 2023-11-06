@@ -267,6 +267,9 @@ local plugins = {
         pickers = {
           find_files = {
             theme = "dropdown",
+          },
+          live_grep = {
+            theme = "ivy",
           }
         }
       })
