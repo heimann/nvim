@@ -42,3 +42,19 @@ vim.cmd[[ set spell! ]]             -- Toggle spellcheck
 vim.opt.spelllang = {"en"}    -- Spellcheck languages
 vim.opt.clipboard = "unnamedplus"
 
+
+-- Restore cursor position when opening files
+local function restore_cursor_position()
+  local last_position = vim.fn.line("'\"")
+  if last_position > 0 and last_position <= vim.fn.line("$") then
+    vim.api.nvim_win_set_cursor(0, {last_position, 0})
+  end
+end
+
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*",
+  callback = restore_cursor_position
+})
+
+
