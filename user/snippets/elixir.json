@@ -49,5 +49,14 @@
       "end"
     ],
     "description": "Define a Phoenix LiveView render function"
+  },
+  "heex": {
+    "prefix": "heex",
+    "body": [
+      "~H\"\"\"",
+      " $0",
+      "\"\"\""
+    ],
+    "description": "Define a heex string"
   }
 }
