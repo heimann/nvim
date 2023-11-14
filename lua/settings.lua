@@ -42,6 +42,10 @@ vim.cmd[[ set spell! ]]             -- Toggle spellcheck
 vim.opt.spelllang = {"en"}    -- Spellcheck languages
 vim.opt.clipboard = "unnamedplus"
 
+-- Disable netrw for nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 
 -- Restore cursor position when opening files
 local function restore_cursor_position()

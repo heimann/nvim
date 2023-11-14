@@ -5,7 +5,7 @@ local chatgpt = require("chatgpt")
 -- Set up your normal mode mappings
 wk.register({
   -- Toggle Neotree
-  ["n"] = { "<cmd>Neotree reveal toggle<CR>", "Toggle Neotree" },
+  ["n"] = { "<cmd>NvimTreeFocus<CR>", "Toggle Nvim-tree" },
 
   -- Telescope mappings
   f = {
