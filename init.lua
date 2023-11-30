@@ -2,9 +2,10 @@
 vim.g.mapleader = ' '
 
 -- 2. Core Configurations
-require('plugins')  -- Load the plugins
+-- require('plugins')  -- Load the plugins
+require('lazy-conf') -- load lazy for plugin loading
 require('settings')  -- Load the settings
-require('which-key-conf')  -- Load whichkey keymaps
+-- require('which-key-conf')  -- Load whichkey keymaps
 require('keymaps')  -- Load generic keymaps
 require('filetypes') -- Load file-type specific configurations
 
@@ -13,5 +14,4 @@ require("lsp")  -- Load LSP configurations
 require("treesitter")  -- Load Treesitter configurations
 
 -- 4. Appearance
-vim.cmd[[colorscheme tokyonight]]  -- Load theme
 require("lineconf")
