@@ -7,7 +7,6 @@ wk.register({
   -- Toggle Neotree
   ["n"] = { "<cmd>NvimTreeFindFileToggle<CR>", "Toggle Nvim-tree" },
 
-  -- Telescope mappings
   f = {
     name = "+find",
     f = { "<cmd>Telescope find_files<CR>", "Find Files" },

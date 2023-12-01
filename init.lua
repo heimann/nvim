@@ -11,7 +11,4 @@ require('filetypes') -- Load file-type specific configurations
 
 -- 3. Plugin Settings and Extensions
 require("lsp")  -- Load LSP configurations
-require("treesitter")  -- Load Treesitter configurations
 
--- 4. Appearance
-require("lineconf")
