@@ -58,5 +58,14 @@
       "\"\"\""
     ],
     "description": "Define a heex string"
+  },
+  "string sigil": {
+    "prefix": "str",
+    "body": [
+      "~S\"\"\"",
+      " $0",
+      "\"\"\""
+    ],
+    "description": "Define a string sigil"
   }
 }
