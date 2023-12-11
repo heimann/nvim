@@ -4,7 +4,7 @@ require("mason").setup()
 
 
 require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls", "rust_analyzer", "tsserver"},
+  ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "pyright"},
 }
 
 local lspconfig = require("lspconfig");
@@ -16,6 +16,8 @@ lspconfig.elixirls.setup {
 }
 
 lspconfig.tsserver.setup{}
+
+lspconfig.pyright.setup{}
 
 lspconfig.lua_ls.setup {
   settings = {
