@@ -18,12 +18,12 @@ return {
     -- Define your formatters
     formatters_by_ft = {
       lua = { "stylua" },
-      elixir = { "mix format" },
+      elixir = { "mix" },
       python = { "isort", "black" },
       javascript = { { "prettierd", "prettier" } },
     },
     -- Set up format-on-save
-    format_on_save = { timeout_ms = 500, lsp_fallback = true },
+    format_on_save = { timeout_ms = 200, lsp_fallback = true },
     -- Customize formatters
     formatters = {
       shfmt = {
