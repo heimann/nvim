@@ -8,11 +8,11 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require("lspconfig")
 
-local elixir_ls_path = os.getenv("ELIXIR_LS_PATH") or "/home/david/code/elixir-ls/language_server.sh"
+-- local elixir_ls_path = os.getenv("ELIXIR_LS_PATH") or "/home/david/code/elixir-ls/language_server.sh"
 
-lspconfig.elixirls.setup({
-	cmd = { elixir_ls_path },
-})
+-- lspconfig.elixirls.setup({
+-- 	cmd = { elixir_ls_path },
+-- })
 
 lspconfig.tsserver.setup({})
 
