@@ -3,7 +3,7 @@
 require("mason").setup()
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "pyright" },
+	ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "pyright", "svelte" },
 })
 
 local lspconfig = require("lspconfig")
@@ -17,6 +17,8 @@ local lspconfig = require("lspconfig")
 lspconfig.tsserver.setup({})
 
 lspconfig.pyright.setup({})
+
+lspconfig.svelte.setup({})
 
 lspconfig.lua_ls.setup({
 	settings = {
