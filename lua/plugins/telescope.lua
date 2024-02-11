@@ -17,6 +17,7 @@ return {
     local keymap = vim.keymap
 
     keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
+    keymap.set("n", "<leader>fg", "<cmd>Telescope git_status<CR>")
     keymap.set("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>")
     keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>")
     keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<CR>")
